@@ -91,31 +91,6 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/landingpage.haml": {
-		"escapeHTMLCharacters": 0,
-		"fileType": 256,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/landingpage.haml",
-		"noEscapeInAttributes": 0,
-		"outputAbbreviatedPath": "\/landingpage.html",
-		"outputFormat": 2,
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 0,
-		"useCDATA": 0,
-		"useDoubleQuotes": 0,
-		"useUnixNewlines": 0
-		},
-	"\/landingpage.html": {
-		"fileType": 8192,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/landingpage.html",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
 	"\/loadtable.js": {
 		"fileType": 64,
 		"ignore": 0,
