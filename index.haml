@@ -1,0 +1,1011 @@
+!!!
+%html
+  %head
+    ///// SOCRATA LANDING PAGE CSS
+    %meta{:charset => "utf-8"}/
+    %meta{:content => "IE=edge,chrome=1", "http-equiv" => "X-UA-Compatible"}/
+    %meta{:content => "width=device-width,initial-scale=1,shrink-to-fit=no", :name => "viewport"}/
+    %title Landing Page Prototype
+    %link{:href => "styleguide-2dbabf38.css", :rel => "stylesheet", :type => "text/css"}/
+    %link{:href => "landingpage-99820c25.css", :rel => "stylesheet"}/
+    %link{:href => "https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,300italic,400italic,600italic,700italic", :rel => "stylesheet", :type => "text/css"}/
+    ////// PIVOT TABLE CSS
+    %link{:href => "https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.11/c3.min.css", :rel => "stylesheet", :type => "text/css"}/
+    %link{:href => "https://cdnjs.cloudflare.com/ajax/libs/chosen/1.4.2/chosen.min.css", :rel => "stylesheet", :type => "text/css"}/
+    %link{:href => "pivot.min.css", :rel => "stylesheet", :type => "text/css"}/
+
+    // MORE PIVOT TABLE INLINE CSS
+    :css
+      .node {
+        border: solid 1px white;
+        font: 10px sans-serif;
+        line-height: 12px;
+        overflow: hidden;
+        position: absolute;
+        text-indent: 2px;
+      }
+      .c3-line, .c3-focused {stroke-width: 3px !important;}
+      .c3-bar {stroke: white !important; stroke-width: 1;}
+      .c3 text { font-size: 12px; color: grey;}
+      .tick line {stroke: white;}
+      .c3-axis path {stroke: grey;}
+      .c3-circle { opacity: 1 !important; }
+
+  %body.prototypes.prototypes_landingpage.prototypes_landingpage_index
+
+    .responsive-navbar
+      / %img{:src => "evergreen-bc368498.png"}/
+      %span Pivot Table Prototype
+      .responsive-navbar-nav
+        / %button.btn.btn-default.btn-inverse Menu
+    .container.main
+    %p
+      = " &nbsp; &nbsp; &nbsp; &nbsp; Choose a Dataset:"
+      %select#csv{"data-placeholder" => "Choose a dataset..."}
+        %option
+      \&#160; &#160;
+      %span#doc
+
+      .content
+        / .header-card
+        /   .infopane-header
+        /     .infopane-title
+        /       %h1.infopane-name Dataset Title
+        /       %span.tag-official
+        /         / %span.icon-official
+        /         / OFFICIAL
+        /       / %span.tag-category Licensing
+        /     .infopane-actions
+        /       .btn-group
+        /         %button.btn.btn-default.btn-simple.grid.btn-sm
+        /           %a{:href => "https://dataspace.demo.socrata.com/d/nnb5-m2k4", :target => "_blank"} View Data Raw
+        /         %button#du.dropdown.btn.btn-default.btn-simple.download.btn-sm{"data-dropdown" => "", "data-orientation" => "bottom"}
+        /           %span Download
+        /           %ul.dropdown-options
+        /             %li
+        /               %a{:href => "#"} CSV
+        /             %li
+        /               %a{:href => "#"} XLS
+        /             %li
+        /               %a{:href => "#"} RDF
+        /             %li
+        /               %a{:href => "#"} XLSX
+        /         %button.btn.btn-default.btn-simple.api.btn-sm{"data-flannel" => "api-flannel", "data-toggle" => ""} API
+        /         %button.btn.btn-default.btn-simple.share.btn-sm{"data-modal" => "share-modal"} Share
+        /         /
+        /           <button id="dd" class="dropdown btn btn-default btn-simple share btn-sm" data-orientation="bottom">
+        /           <span>Share</span>
+        /           <ul class="dropdown-options">
+        /           <li><a href="#"><span class="icon-email"></span>Email</a></li>
+        /           <li><a href="#"><span class="icon-facebook"></span>Facebook</a></li>
+        /           <li><a href="#"><span class="icon-twitter"></span>Twitter</a></li>
+        /           </ul>
+        /           </button>
+        /         %button#dd.dropdown.btn.btn-default.btn-simple.more.btn-sm{"data-dropdown" => "", "data-orientation" => "bottom"}
+        /           %span
+        /             %span.icon-waiting
+        /             %span
+        /               %ul.dropdown-options
+        /                 %li
+        /                   %a{"data-modal" => "contact-modal", :href => "#"} Contact Dataset Owner
+        /                 %li
+        /                   %a{"data-modal" => "odata-modal", :href => "#"} Access Data via OData
+        /     / /.infopane-actions
+        /   / /.infopane-header
+        /   .infopane-content
+        /     .infopane-main
+        /       .infopane-description
+        /         City-wide listing of current liquor licenses, with location information. All renewal records are created with a term start date and term expiration date. The business liquor licenses layer contains an address point where an active liquor license issued in the City. The listing is updated daily and doesn't get renewed when other things do, but it does have the ...
+        /         %span.more-link
+        /           %a.more-link{:href => "#"} More
+        /       /
+        /         <div class="entry-meta first">
+        /         <div class="entry-meta topics">
+        /         <span class="meta-title">Topics</span> <span class="topic-list"><a href="#">one</a>, <a href="#">two</a>, <a href="#">taggytagtag</a>, <a href="#">one</a>, <a href="#">two</a>, <a href="#">taggytagtag</a></span>
+        /         </div>
+
+        /         </div>
+        /     / ./infopane-main
+        /     .entry-meta.second
+        /       .entry-meta.updated
+        /         %span.meta-title Data Last Updated
+        /         %span.date December 1, 2015
+        /       .entry-meta.views
+        /         %span.meta-title Published by
+        /         %span.view-count Department of Economic Development
+        /   / /.entry-content
+        / /.header-card
+      .page-content
+        .lp-section
+          .card-frame
+            #output{:style => "margin: 10px;"}
+        / .lp-section
+        /   %h2.section-header.editable About this Dataset
+        /   .card-frame
+        /     .fancy-metadata
+        /       .section
+        /         .row
+        /           .key-value-pair
+        /             %span.small-label Updated
+        /             %h1.large-number Jan, 10 2014
+        /         .row.middle
+        /           .detail-group
+        /             %span.meta-title Data Last Updated
+        /             %span.date Jan, 10 2014
+        /           .detail-group
+        /             %span.meta-title Metadata Last Updated
+        /             %span.date Jan, 09 2014
+        /         .row
+        /           .detail-group
+        /             %span.meta-title Creation Date
+        /             %span.date Jan, 6 2014
+        /       %hr/
+        /       .section
+        /         .row
+        /           .key-value-pair
+        /             %span.small-label Views
+        /             %h1.large-number 12,234
+        /           .key-value-pair
+        /             %span.small-label Downloads
+        /             %h1.large-number 1,123
+        /         .row
+        /           %a.small-link{:href => "https://dataspace.demo.socrata.com/dataset/Liquor-Authority-Quarterly-List-of-Active-Licenses/nnb5-m2k4/stats"} View all statistics for this Dataset
+        /       %hr/
+        /       .section
+        /         .row
+        /           .detail-group
+        /             %span.meta-title Data Provided by
+        /             %span.date City of Evergreen, Department of Economic Development
+        /           .detail-group
+        /             %span.meta-title Dataset Owner
+        /             %span.date
+        /               %a{:href => "#"} John Doe
+        /         %button.btn.btn-sm.btn-primary.btn-block{"data-modal" => "contact-modal"}
+        /           Contact Data Owner
+        /     / /.fancy-metadata
+        /     .table-wrapper.standard-metadata
+        /       %h5.metadata-title Publishing Details
+        /       %table.table.table-condensed.table-borderless.table-discrete.table-striped
+        /         %tbody
+        /           %tr
+        /             %td{:scope => "row"} Data Update Frequency
+        /             %td Daily
+        /           %tr
+        /             %td{:scope => "row"} Data Change Frequency
+        /             %td Daily
+        /       / /.metadata-table
+        /     .table-wrapper.standard-metadata
+        /       %h5.metadata-title Attachments
+        /       %table.table.table-condensed.table-borderless.table-discrete.table-striped
+        /         %tbody
+        /           %tr
+        /             %td
+        /               %span.icon-copy-document
+        /               %a.unstyled-link{:href => "#"} data_dictionary.pdf
+        /           %tr
+        /             %td
+        /               %span.icon-copy-document
+        /               %a.unstyled-link{:href => "#"} Another attachment with a prettier name
+        /       / /.metadata-table
+        /     .table-wrapper.standard-metadata
+        /       %h5.metadata-title Topics
+        /       %table.table.table-condensed.table-borderless.table-discrete.table-striped
+        /         %tbody
+        /           %tr
+        /             %td{:scope => "row"} Category
+        /             %td Economic Development
+        /           %tr
+        /             %td{:scope => "row"} Tags
+        /             %td
+        /               %a.unstyled-link{:href => "#"}> licensing
+        /               ,
+        /               = succeed "," do
+        /                 %a.unstyled-link{:href => "#"} policy
+        /               = succeed "," do
+        /                 %a.unstyled-link{:href => "#"} permits
+        /               = succeed "," do
+        /                 %a.unstyled-link{:href => "#"} economy
+        /               = succeed "," do
+        /                 %a.unstyled-link{:href => "#"} development
+        /               = succeed "," do
+        /                 %a.unstyled-link{:href => "#"} data
+        /               = succeed "," do
+        /                 %a.unstyled-link{:href => "#"} liquor
+        /               = succeed "," do
+        /                 %a.unstyled-link{:href => "#"} sales
+        /               = succeed "," do
+        /                 %a.unstyled-link{:href => "#"} other
+        /               = succeed "," do
+        /                 %a.unstyled-link{:href => "#"} misc
+        /               = succeed "," do
+        /                 %a.unstyled-link{:href => "#"} tabular
+        /               %a.unstyled-link{:href => "#"} maps
+        /               %span.more-link
+        /                 %a.more-link{:href => "#"} Show All
+        /       / /.metadata-table
+        /     .table-wrapper.standard-metadata
+        /       %h5.metadata-title Licensing and Attribution
+        /       %table.table.table-condensed.table-borderless.table-discrete.table-striped
+        /         %tbody
+        /           %tr
+        /             %td{:scope => "row"} License
+        /             %td Creative Commons
+        /           %tr
+        /             %td{:scope => "row"} Source link
+        /             %td
+        /               %a{:href => "#"} www.data.gov
+        /       / /.metadata-table
+        /       %button.btn.btn-default.btn-sm.btn-block.more-button Show More
+        /       .centered
+        /         %span.more-link
+        /           %a.more-link{:href => "#"} Show More
+        /   / /.card-frame
+        / .lp-section
+        /   %h2.section-header What's in this Dataset
+        /   .card-frame
+        /     .section
+        /       .key-value-pair
+        /         %span.small-label{:title => "Each row in this dataset represents a License"} Rows
+        /         %h1.large-number 521,234
+        /       .key-value-pair
+        /         %span.small-label Columns
+        /         %h1.large-number 12
+        /       .key-value-pair
+        /         %span.small-label Each row is a
+        /         %h1.large-number License
+        / .lp-section
+        /   %h2.section-header Summary of Columns in this Dataset
+        /   .card-frame
+        /     .table-wrapper.schema-preview.schema-preview-expanded
+        /       %table.table.table-condensed.table-borderless.table-discrete
+        /         %thead
+        /           %tr
+        /             %th{:scope => "col"} Column Name
+        /             %th{:scope => "col"} Description
+        /             %th{:scope => "col"} Type
+        /         %tbody
+        /           %tr.no-details-row
+        /             %td.column-name{:scope => "row"} Licensee
+        /             %td Legal name of the license holder
+        /             %td
+        /               %span.type Text
+        /               %span.icon.icon-text
+        /             %td
+        /               %span.icon-arrow-down
+        /               %span.icon-arrow-up
+        /           %tr.details-row
+        /             %td.details-content{:colspan => "4"}
+        /               .row
+        /                 .stat-details
+        /                   %table
+        /                     %tbody
+        /                       %th.title Most Common Values
+        /                       %tr
+        /                         %td.key John Smith
+        /                         %td.value 254 Occurrences
+        /                       %tr
+        /                         %td.key Chung Lee
+        /                         %td.value 120 Occurrences
+        /                       %tr
+        /                         %td.key Michael Dunn
+        /                         %td.value 97 Occurrences
+        /                       %tr
+        /                         %td.key Teresa Ballard
+        /                         %td.value 89 Occurrences
+        /                       %tr
+        /                         %td.key Michael Dunn
+        /                         %td.value 85 Occurrences
+        /                       %tr
+        /                         %td.spacer
+        /                       %tr
+        /                         %td.key Blank Values
+        /                         %td.value 10.3%
+        /                 / /stat-details ><!/
+        /                 .type-details
+        /                   .detail-group
+        /                     %span.title Semantic Type
+        /                     %span.value Name
+        /                   .detail-group
+        /                     %span.title Data Type
+        /                     %span.value
+        /                       %a{:href => "https://dev.socrata.com/docs/datatypes/text.html"} Text
+        /                 / /type-details ><!/
+        /                 .type-details
+        /                   .detail-group
+        /                     %span.title API Fieldname
+        /                     %span.value licensee
+        /                 / /type-details ><!/
+        /                 %div
+        /                   / /row ><!/
+        /             / /details-content ><!/
+        /           / /details-row ><!/
+        /           %tr.no-details-row
+        /             %td.column-name{:scope => "row"} DBA Name
+        /             %td Doing Business As name. The legal name of the business
+        /             %td
+        /               %span.type Text
+        /               %span.icon.icon-text
+        /             %td
+        /               %span.icon-arrow-down
+        /               %span.icon-arrow-up
+        /           %tr.details-row
+        /             %td.details-content{:colspan => "4"}
+        /               .row
+        /                 .stat-details
+        /                   %table
+        /                     %tbody
+        /                       %th.title Most Common Values
+        /                       %tr
+        /                         %td.key BevMo
+        /                         %td.value 254 Occurrences
+        /                       %tr
+        /                         %td.key Walgreen's
+        /                         %td.value 120 Occurrences
+        /                       %tr
+        /                         %td.key Safeway
+        /                         %td.value 97 Occurrences
+        /                       %tr
+        /                         %td.key Mike's Hard Lemonade Store
+        /                         %td.value 89 Occurrences
+        /                       %tr
+        /                         %td.key Rudy's
+        /                         %td.value 85 Occurrences
+        /                       %tr
+        /                         %td.spacer
+        /                       %tr
+        /                         %td.key Blank Values
+        /                         %td.value 10.3%
+        /                 / /stat-details ><!/
+        /                 .type-details
+        /                   .detail-group
+        /                     %span.title Semantic Type
+        /                     %span.value Name
+        /                   .detail-group
+        /                     %span.title Data Type
+        /                     %span.value
+        /                       %a{:href => "https://dev.socrata.com/docs/datatypes/text.html"} Text
+        /                 / /type-details ><!/
+        /                 .type-details
+        /                   .detail-group
+        /                     %span.title API Fieldname
+        /                     %span.value dba_name
+        /                 / /type-details ><!/
+        /                 %div
+        /                   / /row ><!/
+        /             / /details-content ><!/
+        /           / /details-row ><!/
+        /           %tr.no-details-row
+        /             %td.column-name{:scope => "row"} License Number
+        /             %td Unique Identifier for the license. Note: if licence gets renewed, multiple entries with the same identifier may appear.
+        /             %td
+        /               %span.type Number
+        /               %span.icon.icon-number
+        /             %td
+        /               %span.icon-arrow-down
+        /               %span.icon-arrow-up
+        /           %tr.details-row
+        /             %td.details-content{:colspan => "4"}
+        /               .row
+        /                 .stat-details
+        /                   %table
+        /                     %tbody
+        /                       %th.title Statistics
+        /                       %tr
+        /                         %td.key Minimum
+        /                         %td.value 00012301
+        /                       %tr
+        /                         %td.key Maximum
+        /                         %td.value 99123898
+        /                       %tr
+        /                         %td.key Average
+        /                         %td.value 342912
+        /                       %tr
+        /                         %td.key Median
+        /                         %td.value 234592
+        /                       %tr
+        /                         %td.key Standard Deviation
+        /                         %td.value 85
+        /                       %tr
+        /                         %td.spacer
+        /                       %tr
+        /                         %td.key Blank Values
+        /                         %td.value 10.3%
+        /                 / /stat-details ><!/
+        /                 .type-details
+        /                   .detail-group
+        /                     %span.title Semantic Type
+        /                     %span.value ID
+        /                   .detail-group
+        /                     %span.title Data Type
+        /                     %span.value
+        /                       %a{:href => "https://dev.socrata.com/docs/datatypes/number.html"} Number
+        /                 / /type-details ><!/
+        /                 .type-details
+        /                   .detail-group
+        /                     %span.title API Fieldname
+        /                     %span.value license_number
+        /                 / /type-details ><!/
+        /                 %div
+        /                   / /row ><!/
+        /             / /details-content ><!/
+        /           / /details-row ><!/
+        /           %tr.no-details-row
+        /             %td.column-name{:scope => "row"} Expiration Date
+        /             %td
+        /             %td
+        /               %span.type Timestamp
+        /               %span.icon.icon-date
+        /             %td
+        /               %span.icon-arrow-down
+        /               %span.icon-arrow-up
+        /           %tr.details-row
+        /             %td.details-content{:colspan => "4"}
+        /               .row
+        /                 .stat-details
+        /                   %table
+        /                     %tbody
+        /                       %th.title Data Range
+        /                       %tr
+        /                         %td.key Earliest Date
+        /                         %td.value Jan 1, 2001
+        /                       %tr
+        /                         %td.key Latest Date
+        /                         %td.value March 12, 3016
+        /                       %tr
+        /                         %td.spacer
+        /                       %tr
+        /                         %td.key Blank Values
+        /                         %td.value 10.3%
+        /                 / /stat-details ><!/
+        /                 .type-details
+        /                   .detail-group
+        /                     %span.title Semantic Type
+        /                     %span.value Date
+        /                   .detail-group
+        /                     %span.title Data Type
+        /                     %span.value
+        /                       %a{:href => "https://dev.socrata.com/docs/datatypes/floating_timestamp.html"} Timestamp
+        /                 / /type-details ><!/
+        /                 .type-details
+        /                   .detail-group
+        /                     %span.title API Fieldname
+        /                     %span.value expiration_date
+        /                 / /type-details ><!/
+        /                 %div
+        /                   / /row ><!/
+        /             / /details-content ><!/
+        /           / /details-row ><!/
+        /           %tr.no-details-row
+        /             %td.column-name{:scope => "row"} Value
+        /             %td Value of the license
+        /             %td
+        /               %span.type Money
+        /               %span.icon.icon-number
+        /             %td
+        /               %span.icon-arrow-down
+        /               %span.icon-arrow-up
+        /           %tr.details-row
+        /             %td.details-content{:colspan => "4"}
+        /               .row
+        /                 .stat-details
+        /                   %table
+        /                     %tbody
+        /                       %th.title Statistics
+        /                       %tr
+        /                         %td.key Minimum
+        /                         %td.value $-1,432
+        /                       %tr
+        /                         %td.key Maximum
+        /                         %td.value $99,452
+        /                       %tr
+        /                         %td.key Average
+        /                         %td.value $33,234
+        /                       %tr
+        /                         %td.key Median
+        /                         %td.value $5,677
+        /                       %tr
+        /                         %td.key Standard Deviation
+        /                         %td.value 2,345
+        /                       %tr
+        /                         %td.spacer
+        /                       %tr
+        /                         %td.key Blank Values
+        /                         %td.value 11.3%
+        /                 / /stat-details ><!/
+        /                 .type-details
+        /                   .detail-group
+        /                     %span.title Semantic Type
+        /                     %span.value Amount
+        /                   .detail-group
+        /                     %span.title Data Type
+        /                     %span.value
+        /                       %a{:href => "https://dev.socrata.com/docs/datatypes/money.html"} Money
+        /                 / /type-details ><!/
+        /                 .type-details
+        /                   .detail-group
+        /                     %span.title API Fieldname
+        /                     %span.value value
+        /                 / /type-details ><!/
+        /                 %div
+        /                   / /row ><!/
+        /             / /details-content ><!/
+        /           / /details-row ><!/
+        /           %tr.no-details-row
+        /             %td.column-name{:scope => "row"} Location
+        /             %td Mailing Address of the Business
+        /             %td
+        /               %span.type Point
+        /               %span.icon.icon-map
+        /             %td
+        /               %span.icon-arrow-down
+        /               %span.icon-arrow-up
+        /           %tr.details-row
+        /             %td.details-content{:colspan => "4"}
+        /               .row
+        /                 .stat-details
+        /                   %table
+        /                     %tbody
+        /                       %th.title Statistics
+        /                       %tr
+        /                         %td.key Blank Values
+        /                         %td.value 11.3%
+        /                 / /stat-details ><!/
+        /                 .type-details
+        /                   .detail-group
+        /                     %span.title Semantic Type
+        /                     %span.value Location
+        /                   .detail-group
+        /                     %span.title Data Type
+        /                     %span.value
+        /                       %a{:href => "https://dev.socrata.com/docs/datatypes/point.html"} Point
+        /                 / /type-details ><!/
+        /                 .type-details
+        /                   .detail-group
+        /                     %span.title API Fieldname
+        /                     %span.value location
+        /                 / /type-details ><!/
+        /                 %div
+        /                   / /row ><!/
+        /             / /details-content ><!/
+        /           / /details-row ><!/
+        /       / /.metadata-table
+        /     %button.btn.btn-default.btn-sm.btn-block.more-button Show All (12)
+        /     .centered
+        /       %span.more-link
+        /         %a.more-link{:href => "#"} Show All (12)
+        /       / <button class="btn btn-default btn-xs">See all metadata</button>
+        /   / /.card-frame
+        / .lp-section.data-preview
+        /   %ul.nav-tabs
+        /     %li.tab-link.current.section-header{"data-tab-id" => "map"}
+        /       %a{:href => "javascript:void()"} Map Preview
+        /     %li.tab-link.section-header{"data-tab-id" => "data"}
+        /       %a{:href => "javascript:void()"} Table Preview
+        /   #map.tab-content.current
+        /     %div
+        /       / <img src="https://api.mapbox.com/styles/v1/socrata-apps/cinsbp4lm009lbom66vcaq3ku/static/-95.693911,39.029005,10.95,0.00,0.00/1000x600?access_token=pk.eyJ1Ijoic29jcmF0YS1hcHBzIiwiYSI6IlRUV0NRdFUifQ.7vUv6GVqqlxqHpwAo7DlDA" class="map-img" alt="Basic" />
+        /       %img.map-img{:alt => "map", :src => "https://dl.dropboxusercontent.com/u/4235130/mondaraMap.png"}/
+        /     %button.btn.btn-primary.btn-sm.btn-block Explore this Map
+        /   #data.tab-content
+        /     .card-frame
+        /       .table-wrapper
+        /         %table.table.table-condensed
+        /           %thead
+        /             %tr
+        /               %th{:scope => "col"} Licensee
+        /               %th{:scope => "col"} DBA Name
+        /               %th{:scope => "col"} License Number
+        /               %th{:scope => "col"} Expiration Date
+        /               %th{:scope => "col"} Value
+        /               %th{:scope => "col"} Location
+        /           %tbody
+        /             %tr
+        /               %td{:scope => "row"} Gilbert Glover
+        /               %td Burger King #214421
+        /               %td 12413182
+        /               %td May 1, 2015
+        /               %td 34
+        /               %td (-0.2324553,180.214141)
+        /             %tr
+        /               %td{:scope => "row"} Gilbert Glover
+        /               %td Burger King #214421
+        /               %td 12413182
+        /               %td May 1, 2015
+        /               %td 34
+        /               %td (-0.2324553,180.214141)
+        /             %tr
+        /             %tr
+        /               %td{:scope => "row"} Gilbert Glover
+        /               %td Burger King #214421
+        /               %td 12413182
+        /               %td May 1, 2015
+        /               %td 34
+        /               %td (-0.2324553,180.214141)
+        /             %tr
+        /             %tr
+        /               %td{:scope => "row"} Gilbert Glover
+        /               %td Burger King #214421
+        /               %td 12413182
+        /               %td May 1, 2015
+        /               %td 34
+        /               %td (-0.2324553,180.214141)
+        /             %tr
+        /             %tr
+        /               %td{:scope => "row"} Gilbert Glover
+        /               %td Burger King #214421
+        /               %td 12413182
+        /               %td May 1, 2015
+        /               %td 34
+        /               %td (-0.2324553,180.214141)
+        /             %tr
+        /             %tr
+        /               %td{:scope => "row"} Gilbert Glover
+        /               %td Burger King #214421
+        /               %td 12413182
+        /               %td May 1, 2015
+        /               %td 34
+        /               %td (-0.2324553,180.214141)
+        /             %tr
+        /             %tr
+        /               %td{:scope => "row"} Gilbert Glover
+        /               %td Burger King #214421
+        /               %td 12413182
+        /               %td May 1, 2015
+        /               %td 34
+        /               %td (-0.2324553,180.214141)
+        /             %tr
+        /             %tr
+        /               %td{:scope => "row"} Gilbert Glover
+        /               %td Burger King #214421
+        /               %td 12413182
+        /               %td May 1, 2015
+        /               %td 34
+        /               %td (-0.2324553,180.214141)
+        /             %tr
+        /             %tr
+        /               %td{:scope => "row"} Gilbert Glover
+        /               %td Burger King #214421
+        /               %td 12413182
+        /               %td May 1, 2015
+        /               %td 34
+        /               %td (-0.2324553,180.214141)
+        /             %tr
+        /             %tr
+        /               %td{:scope => "row"} Gilbert Glover
+        /               %td Burger King #214421
+        /               %td 12413182
+        /               %td May 1, 2015
+        /               %td 34
+        /               %td (-0.2324553,180.214141)
+        /             %tr
+        /       .results-pagination-controls
+        /         .pagination
+        /           %a.next.nextLink.pagination-button.disabled{:disabled => "disabled", :href => "#", :title => "Next Page"}
+        /             %span.icon
+        /               %span.icon-arrow-left Previous
+        /           %a.end.lastLink.pagination-button{:href => "#", :title => "Last Page"}
+        /             %span.icon
+        /               Next
+        /               %span.icon-arrow-right
+        /           %span.ellipses Showing rows 1-10 of the first 50 rows
+        /       %a.grid-link{:href => "https://dataspace.demo.socrata.com/d/nnb5-m2k4"}
+        /         Interact with the full table
+        /         %span.icon-external
+        /       %button.btn.btn-default.btn-sm.btn-block.grid-button
+        /         Interact with the full table
+        /         %span.icon-external
+        /     / /.card-frame
+        /   / /.tab-content
+        / .lp-section
+        /   %h2.section-header Popular Content Using this Data
+        /   .alert.default{:hidden => "hidden"}
+        /     %b Hmm...
+        /     Looks like there is no public content using this data.
+        /   .media-results
+        /     .result-card.media.no-meta
+        /       .entry-header
+        /         .entry-title
+        /           %h2.entry-name
+        /             %a{:href => "#"} How to Apply for a Liquor Licence
+        /         .entry-view-type
+        /           %span.icon-story
+        /       .entry-meta
+        /         .first
+        /           %span.date Mar. 12, 2016
+        /         .second
+        /           %span.date 12,235 Views
+        /       .entry-content
+        /         .entry-main
+        /           .img-wrapper.chart
+        /             / <span class="icon-bar-chart x-large-icon"></span>
+        /             / MVP
+        /             %img{:alt => " ", :src => "https://dl.dropboxusercontent.com/u/4235130/bottles.png"}/
+        /           .entry-description
+        /             Story explaining the procedure for applying for a license, as well as some general trends around current licensing.
+        /     / /.result-card
+        /     .result-card.media.no-meta
+        /       .entry-header
+        /         .entry-title
+        /           %h2.entry-name
+        /             %a{:href => "#"} Licensing trends by neighborhood. Number of approved licenses per ...
+        /         .entry-view-type
+        /           %span.icon-map
+        /       .entry-meta
+        /         .first
+        /           %span.date Mar. 12, 2016
+        /         .second
+        /           %span.date 12,234 Views
+        /       .entry-content
+        /         .entry-main
+        /           .img-wrapper.map
+        /             / <span class="icon-map x-large-icon"></span>
+        /             / MVP
+        /             %img{:alt => " ", :src => "https://dl.dropboxusercontent.com/u/4235130/heatmap.png"}/
+        /           .entry-description
+        /             Map showing the number of approved licenses for each neighborhood in the city.
+        /     / /.result-card
+        /     .result-card.media.no-meta.last
+        /       .entry-header
+        /         .entry-title
+        /           %h2.entry-name
+        /             %a{:href => "#"} Licenses by Type
+        /         .entry-view-type
+        /           %span.icon-cards
+        /       .entry-meta
+        /         .first
+        /           %span.date Mar. 12, 2016
+        /         .second
+        /           %span.date 1,234 Views
+        /       .entry-content
+        /         .entry-main
+        /           .img-wrapper.data-lens
+        /             / <span class="icon-cards x-large-icon"></span>
+        /             / MVP
+        /             %img{:alt => " ", :src => "https://dl.dropboxusercontent.com/u/4235130/dataLens.png"}/
+        /           .entry-description
+        /             Interactive experience showing licenses by type, filterable by neighborhood and business type. This data is based on the last 4 years...
+        /     / /.result-card
+        /     .result-card.media.no-meta.loading-card
+        /       .entry-content
+        /         .entry-main
+        /           .img-wrapper.spinner
+        /             %span.spinner-default.x-large-spinner
+        /             / MVP
+        /             / <img src="https://dl.dropboxusercontent.com/u/4235130/dataLens.png" alt=" " />
+        /           .entry-description
+        /     / /.result-card
+        /   / /.media-results
+        /   .media-results.footer
+        /     .footer-action
+        /       %a.unstyled-link{:href => "../catalog/catalog-derived.html"}
+        /         View all content created from
+        /         %i Current Liquor Licenses
+    #api-flannel.flannel.flannel-hidden
+      %header.flannel-header
+        %h4.flannel-header-title Access this Dataset via SODA API
+        %button.btn.btn-transparent.flannel-header-dismiss{"data-flannel-dismiss" => ""}
+          %span.icon-close-2
+      %section.flannel-content
+        %p.small The Socrata Open Data API (SODA) provides programmatic access to this dataset including the ability to filter, query, and aggregate data.
+        %button.btn.btn-default.btn-sm
+          %span.icon-copy-document>
+          API Docs
+        %button.btn.btn-default.btn-sm
+          %span.icon-settings>
+          Developer Portal
+      %section.flannel-content
+        %h6 API Endpoint
+        %form
+          %span.input-group
+            %input.text-input.text-input-sm{:placeholder => "https://evergreen.data.socrata.com/resource/nijw-wqck.json", :readonly => "readonly", :type => "text"}/
+            %span.input-group-btn
+              %button#du.dropdown.btn.btn-default.btn-simple.btn-sm{"data-dropdown" => "", "data-orientation" => "bottom"}
+                %span
+                  JSON
+                  %span.icon-arrow-down
+                %ul.dropdown-options
+                  %li
+                    %a{:href => "#"} JSON
+                  %li
+                    %a{:href => "#"} GeoJSON
+            %span.input-group-btn
+              %button.btn.btn-primary.btn-sm Copy
+    #share-modal.modal.modal-overlay.modal-hidden{"data-modal-dismiss" => ""}
+      .modal-container
+        %header.modal-header
+          %h1.h5.modal-header-title Share this Dataset
+          %button.btn.btn-transparent.modal-header-dismiss{"data-modal-dismiss" => ""}
+            %span.icon-close-2
+        %section.modal-content
+        %section.modal-content
+          .facebook
+            %a.unstyled-link{:href => "#"}
+              %span.icon-facebook
+              Share via Facebook
+          .twitter
+            %a.unstyled-link{:href => "#"}
+              %span.icon-twitter
+              Share via Twitter
+          .email
+            %a.unstyled-link{:href => "#"}
+              %span.icon-email
+              Share via Email
+        %footer.modal-actions
+          %button.btn.btn-default.btn-sm{"data-modal-dismiss" => ""} Close
+    #odata-modal.modal.modal-overlay.modal-hidden{"data-modal-dismiss" => ""}
+      .modal-container
+        %header.modal-header
+          %h1.h5.modal-header-title Access this Dataset via OData
+          %button.btn.btn-transparent.modal-header-dismiss{"data-modal-dismiss" => ""}
+            %span.icon-close-2
+        %section.modal-content
+          %p.small Create a spreadsheet in Microsoft Excel to analyze or visualize this dataset. By using an OData link, the data will be refreshable.
+          %button.btn.btn-default.btn-sm
+            %span.icon-copy-document>
+            Socrata OData Documentation
+        %section.modal-content
+          %h6 OData Endpoint
+          %form
+            %span.input-group
+              %input.text-input.text-input-sm{:placeholder => "https://evergreen.data.socrata.com/OData.svc/7ais-f98f", :readonly => "readonly", :type => "text"}/
+              %span.input-group-btn
+                %button.btn.btn-primary.btn-sm Copy
+        %footer.modal-actions
+          %button.btn.btn-default.btn-sm{"data-modal-dismiss" => ""} Done
+    #contact-modal.modal.modal-overlay.modal-hidden{"data-modal-dismiss" => ""}
+      .modal-container
+        %header.modal-header
+          %h1.h5.modal-header-title Send a Message to the Owner of this Dataset
+          %button.btn.btn-transparent.modal-header-dismiss{"data-modal-dismiss" => ""}
+            %span.icon-close-2
+        %section.modal-content
+          %p.small Send a short message to the dataset owner to ask a question, make a comment, or point out something about the data.
+          %form
+            %label.block-label Subject
+            %input.text-input.subject{:placeholder => "", :type => "text"}/
+            %label.block-label Message
+            %textarea.text-input.text-area.message{:placeholder => "", :type => "text"}
+            %label.block-label
+              Your Email
+              %span.x-small.quiet (Your email address will be shared with the dataset owner so they can get back to you)
+            %input.text-input.email{:placeholder => "", :type => "text"}/
+          %form{:action => "?", :method => "POST"}
+            .g-recaptcha{"data-sitekey" => "6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"}
+        %section.modal-content
+          .alert.error{:hidden => "hidden"}
+            Please enter a valid email address.
+        %footer.modal-actions
+          %button.btn.btn-default.btn-sm{"data-modal-dismiss" => ""} Cancel
+          %button#launch-congrats-modal.btn.btn-primary.btn-sm Send
+    #congrats-modal.modal.modal-overlay.modal-hidden{"data-modal-dismiss" => ""}
+      .modal-container
+        %section.modal-content
+          .alert.success
+            %b Thank You!
+            Your message has been sent.
+      //// SOCRATA LANDING PAGE JS
+      %script{:src => "prism-383ea744.js", :type => "text/javascript"}
+      %script{:src => "styleguide-f7ec71f6.js", :type => "text/javascript"}
+      %script{:src => "all-06fb0789.js", :type => "text/javascript"}
+      %script{:src => "https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"}
+      %script{:async => "", :defer => "defer", :src => "https://www.google.com/recaptcha/api.js"}
+      //// SOCRATA LANDING PAGE INLINE JS
+      :javascript
+        var viewPortHeight = $(window).height();
+          var headerHeight = $(".menu-header").outerHeight(true);
+          var filterActionHeight = $(".filter-action-container").outerHeight(true);
+          var filterListActveHeight = $(".filter-list.active").outerHeight(true);
+          var maxContentHeight = viewPortHeight - headerHeight - filterActionHeight - filterListActveHeight + 63;
+
+
+
+          $("#launch-congrats-modal").on("click", function(){
+            $("#contact-modal").addClass('modal-hidden');
+            //$("#congrats-modal").removeClass('modal-hidden');
+            $("#congrats-modal").removeClass("modal-hidden").delay(2000).fadeOut(400);
+          })
+
+
+          //hide the expandable details
+          $("tr .row").hide(); //div
+          $("tr.details-row").hide(); //tr
+
+
+          //animations for schema preview
+          $(".schema-preview tr.no-details-row").on("click", function(e) {
+
+              //if the details aren't shown
+              if($(this).next("tr.details-row").is(":visible") == false) {
+
+                //show the <tr> then animate
+                $(this).next().show();
+                $(this).next("tr").children().children(".row").slideToggle("slow");
+
+              } else {
+
+                  //animate then hide the <tr>
+                  $(this).next("tr").children().children(".row").slideToggle("slow", function() {
+                    $(this).parent().parent().hide();
+
+                  });
+              }
+
+              $(this).toggleClass("expanded");
+
+           })
+
+          //get rid of alert
+          $(".alert .icon-close-2").on("click", function() {
+            $(".alert").hide();
+          })
+
+
+        //tabs logic
+        $(document).ready(function(){
+           $('ul.nav-tabs li').click(function(){
+            var tab_id = $(this).attr('data-tab-id');
+
+            $('ul.nav-tabs li').removeClass('current');
+            $('.tab-content').removeClass('current');
+
+            $(this).addClass('current');
+            $("#"+tab_id).addClass('current');
+          })
+        });
+      ///// PIVOT TABLE  DEPENDENCIES JS
+      %script{:src => "https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.2/jquery.min.js", :type => "text/javascript"}
+      %script{:src => "https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js", :type => "text/javascript"}
+      %script{:src => "https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js", :type => "text/javascript"}
+      %script{:src => "https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js", :type => "text/javascript"}
+      %script{:src => "https://cdnjs.cloudflare.com/ajax/libs/jquery-csv/0.71/jquery.csv-0.71.min.js", :type => "text/javascript"}
+      %script{:src => "https://cdnjs.cloudflare.com/ajax/libs/chosen/1.4.2/chosen.jquery.js", :type => "text/javascript"}
+      %script{:src => "https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.11/c3.min.js", :type => "text/javascript"}
+      ///// PivotTable.js
+      %link{:href => "pivot.min.css", :rel => "stylesheet", :type => "text/css"}/
+      %script{:src => "pivot.js", :type => "text/javascript"}
+      %script{:src => "d3_renderers.js", :type => "text/javascript"}
+      %script{:src => "c3_renderers.js", :type => "text/javascript"}
+      %script{:src => "export_renderers.js", :type => "text/javascript"}
+
+      /// Code exection
+      %script{:src => "underscore-min.js", :type => "text/javascript"}
+      %script{:src => "loadtable.js", :type => "text/javascript"}
+
+      //// PIVOT TABLE INLINE JS
+      / :javascript
+      /   $(function(){
+      /       $.get("http://nicolas.kruchten.com/Rdatasets/datasets.csv", function(csvlist){
+      /               var pkg = $("<optgroup>", {label: ""});
+      /               var csvlist_arr =$.csv.toObjects(csvlist);
+      /               for(var i in csvlist_arr)
+      /               {
+      /                   var dataset = csvlist_arr[i];
+      /                   if(dataset.Package != pkg.attr("label"))
+      /                   {
+      /                       pkg = $("<optgroup>", {label: dataset.Package}).appendTo($("#csv"));
+      /                   }
+      /                   pkg.append($("<option>", {value: dataset.Package+"/"+dataset.Item}).text(dataset.Item +":" +dataset.Title));
+      /               }
+      /               $("#csv").chosen();
+      /               $("#csv").bind("change", function(event){
+      /                   $("#output").empty().text("Loading...")
+      /                   var val = $(this).val();
+      /                   $.get("http://nicolas.kruchten.com/Rdatasets/csv/"+val+".csv", function(csvtext){
+      /                       $("#doc").empty().append(
+      /                           $("<a>",{target:"_blank", href:"/Rdatasets/doc/"+val+".html"}).html("Dataset documentation &raquo;")
+      /                       );
+
+      /                   var input = $.csv.toArrays(csvtext);
+      /                   input[0][0] = "Row";
+      /                   var renderers = $.extend(
+      /                       $.pivotUtilities.renderers,
+      /                       $.pivotUtilities.c3_renderers,
+      /                       $.pivotUtilities.d3_renderers,
+      /                       $.pivotUtilities.export_renderers
+      /                       );
+
+      /                   $("#output").pivotUI(input, {renderers: renderers}, true);
+      /               });
+      /           });
+      /       });
+      /   });
