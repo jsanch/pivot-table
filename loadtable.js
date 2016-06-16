@@ -1,16 +1,17 @@
 var a = '';
 function drawtable(four_by_four) {
+    var appToken = "fUi33kRhHMIFBkbOHEhoNscqj";
     var socrataDomain = "mydata.iadb.org"
     var socrataDatasetId = four_by_four
-    var socrataDatasetQuery = "SELECT * LIMIT 50000"
-    var socrataQueryURL = "http://" + socrataDomain + "/resource/" + socrataDatasetId + ".json?$query=" + socrataDatasetQuery
-    var socrataMetaQueryURL = "http://" + socrataDomain + "/api/views/" + socrataDatasetId + ".json?admin=true"
+    var socrataDatasetQuery = "SELECT * LIMIT 5000000"
+    var socrataQueryURL = "https://" + socrataDomain + "/resource/" + socrataDatasetId + ".json?$query=" + socrataDatasetQuery + "&&$$app_token=" + appToken;
+    var socrataMetaQueryURL = "https://" + socrataDomain + "/api/views/" + socrataDatasetId + ".json?admin=true"
     $.getJSON(encodeURI(socrataMetaQueryURL), function(metadata) {
         $.get(socrataQueryURL, function(results) {
             $("#doc").empty().append(
                 $("<a>", {
                     target: "_blank",
-                    href: "http://" + socrataDomain + "/d/" + four_by_four + "/about?enable_dataset_landing_page=true"
+                    href: "https://" + socrataDomain + "/d/" + four_by_four
                 }).html("See Dataset")
             );
             // Get number columns
@@ -54,7 +55,7 @@ function drawtable(four_by_four) {
 }
 $(function() {
     console.log("hello");
-    $.get("http://mydata.iadb.org/api/views", function(dsetlist) {
+    $.get("https://mydata.iadb.org/api/views", function(dsetlist) {
         dsetlist = _.where(dsetlist,{displayType:"table"})
         a = dsetlist;
 
