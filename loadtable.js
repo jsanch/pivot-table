@@ -3,7 +3,7 @@ function drawtable(four_by_four) {
     var appToken = "fUi33kRhHMIFBkbOHEhoNscqj";
     var socrataDomain = "mydata.iadb.org"
     var socrataDatasetId = four_by_four
-    var socrataDatasetQuery = "SELECT * LIMIT 5000000"
+    var socrataDatasetQuery = "SELECT * LIMIT 50000"
     var socrataQueryURL = "https://" + socrataDomain + "/resource/" + socrataDatasetId + ".json?$query=" + socrataDatasetQuery + "&&$$app_token=" + appToken;
     var socrataMetaQueryURL = "https://" + socrataDomain + "/api/views/" + socrataDatasetId + ".json?admin=true"
     $.getJSON(encodeURI(socrataMetaQueryURL), function(metadata) {
