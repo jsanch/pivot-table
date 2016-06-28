@@ -13,49 +13,65 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/c3_renderers.js": {
+	"\/assets\/css\/landingpage-99820c25.css": {
+		"fileType": 16,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/assets\/css\/landingpage-99820c25.css",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/assets\/css\/styleguide-2dbabf38.css": {
+		"fileType": 16,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/assets\/css\/styleguide-2dbabf38.css",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/assets\/js\/loadtable.js": {
 		"fileType": 64,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/c3_renderers.js",
-		"outputAbbreviatedPath": "\/min\/c3_renderers-min.js",
+		"inputAbbreviatedPath": "\/assets\/js\/loadtable.js",
+		"outputAbbreviatedPath": "\/assets\/js\/min\/loadtable-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/d3_renderers.js": {
+	"\/assets\/js\/prism-383ea744.js": {
 		"fileType": 64,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/d3_renderers.js",
-		"outputAbbreviatedPath": "\/min\/d3_renderers-min.js",
+		"inputAbbreviatedPath": "\/assets\/js\/prism-383ea744.js",
+		"outputAbbreviatedPath": "\/assets\/js\/min\/prism-383ea744-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/evergreen-bc368498.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 3599,
-		"inputAbbreviatedPath": "\/evergreen-bc368498.png",
-		"outputAbbreviatedPath": "\/evergreen-bc368498.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/export_renderers.js": {
+	"\/assets\/js\/styleguide-f7ec71f6.js": {
 		"fileType": 64,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/export_renderers.js",
-		"outputAbbreviatedPath": "\/min\/export_renderers-min.js",
+		"inputAbbreviatedPath": "\/assets\/js\/styleguide-f7ec71f6.js",
+		"outputAbbreviatedPath": "\/assets\/js\/min\/styleguide-f7ec71f6-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
+		},
+	"\/blob.html": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/blob.html",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
 		},
 	"\/index.haml": {
 		"escapeHTMLCharacters": 0,
@@ -82,37 +98,6 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/landingpage-99820c25.css": {
-		"fileType": 16,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/landingpage-99820c25.css",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
-	"\/loadtable.js": {
-		"fileType": 64,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/loadtable.js",
-		"outputAbbreviatedPath": "\/min\/loadtable-min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
-		},
-	"\/login.js": {
-		"fileType": 64,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/login.js",
-		"outputAbbreviatedPath": "\/min\/login-min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
-		},
 	"\/min\/loadtable-min.js": {
 		"fileType": 64,
 		"ignore": 1,
@@ -135,65 +120,47 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/oauth.js": {
+	"\/min\/oauth-min.js": {
 		"fileType": 64,
-		"ignore": 0,
+		"ignore": 1,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/oauth.js",
-		"outputAbbreviatedPath": "\/min\/oauth-min.js",
+		"inputAbbreviatedPath": "\/min\/oauth-min.js",
+		"outputAbbreviatedPath": "\/min\/min\/oauth-min-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/pivot-table.css": {
-		"fileType": 16,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/pivot-table.css",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
-	"\/pivot.js": {
+	"\/oauthtest\/login.js": {
 		"fileType": 64,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/pivot.js",
-		"outputAbbreviatedPath": "\/min\/pivot-min.js",
+		"inputAbbreviatedPath": "\/oauthtest\/login.js",
+		"outputAbbreviatedPath": "\/oauthtest\/min\/login-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/pivot.min.css": {
-		"fileType": 16,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/pivot.min.css",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
-	"\/prism-383ea744.js": {
+	"\/oauthtest\/oauth.js": {
 		"fileType": 64,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/prism-383ea744.js",
-		"outputAbbreviatedPath": "\/min\/prism-383ea744-min.js",
+		"inputAbbreviatedPath": "\/oauthtest\/oauth.js",
+		"outputAbbreviatedPath": "\/oauthtest\/min\/oauth-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/r.haml": {
+	"\/oauthtest\/testoauth.haml": {
 		"escapeHTMLCharacters": 0,
 		"fileType": 256,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/r.haml",
+		"inputAbbreviatedPath": "\/oauthtest\/testoauth.haml",
 		"noEscapeInAttributes": 0,
-		"outputAbbreviatedPath": "\/r.html",
+		"outputAbbreviatedPath": "\/oauthtest\/testoauth.html",
 		"outputFormat": 2,
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
@@ -202,11 +169,20 @@
 		"useDoubleQuotes": 0,
 		"useUnixNewlines": 0
 		},
-	"\/r.html": {
+	"\/oauthtest\/testoauth.html": {
 		"fileType": 8192,
 		"ignore": 1,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/r.html",
+		"inputAbbreviatedPath": "\/oauthtest\/testoauth.html",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/pivot-table.css": {
+		"fileType": 16,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/pivot-table.css",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
@@ -232,14 +208,14 @@
 		"randomFootnoteNumbers": 0,
 		"useCompatibilityMode": 0
 		},
-	"\/sign-in.haml": {
+	"\/testhtml.haml": {
 		"escapeHTMLCharacters": 0,
 		"fileType": 256,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/sign-in.haml",
+		"inputAbbreviatedPath": "\/testhtml.haml",
 		"noEscapeInAttributes": 0,
-		"outputAbbreviatedPath": "\/sign-in.html",
+		"outputAbbreviatedPath": "\/testhtml.html",
 		"outputFormat": 2,
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
@@ -248,66 +224,65 @@
 		"useDoubleQuotes": 0,
 		"useUnixNewlines": 0
 		},
-	"\/sign-in.html": {
-		"fileType": 8192,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/sign-in.html",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
-	"\/styleguide-2dbabf38.css": {
+	"\/vendor\/css\/pivot.min.css": {
 		"fileType": 16,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/styleguide-2dbabf38.css",
+		"inputAbbreviatedPath": "\/vendor\/css\/pivot.min.css",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/styleguide-f7ec71f6.js": {
+	"\/vendor\/js\/c3_renderers.js": {
 		"fileType": 64,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/styleguide-f7ec71f6.js",
-		"outputAbbreviatedPath": "\/min\/styleguide-f7ec71f6-min.js",
+		"inputAbbreviatedPath": "\/vendor\/js\/c3_renderers.js",
+		"outputAbbreviatedPath": "\/vendor\/js\/min\/c3_renderers-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/testoauth.haml": {
-		"escapeHTMLCharacters": 0,
-		"fileType": 256,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/testoauth.haml",
-		"noEscapeInAttributes": 0,
-		"outputAbbreviatedPath": "\/testoauth.html",
-		"outputFormat": 2,
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 0,
-		"useCDATA": 0,
-		"useDoubleQuotes": 0,
-		"useUnixNewlines": 0
-		},
-	"\/testoauth.html": {
-		"fileType": 8192,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/testoauth.html",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
-	"\/underscore-min.js": {
+	"\/vendor\/js\/d3_renderers.js": {
 		"fileType": 64,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/underscore-min.js",
-		"outputAbbreviatedPath": "\/min\/underscore-min-min.js",
+		"inputAbbreviatedPath": "\/vendor\/js\/d3_renderers.js",
+		"outputAbbreviatedPath": "\/vendor\/js\/min\/d3_renderers-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/vendor\/js\/export_renderers.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/vendor\/js\/export_renderers.js",
+		"outputAbbreviatedPath": "\/vendor\/js\/min\/export_renderers-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/vendor\/js\/pivot.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/vendor\/js\/pivot.js",
+		"outputAbbreviatedPath": "\/vendor\/js\/min\/pivot-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/vendor\/js\/underscore-min.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/vendor\/js\/underscore-min.js",
+		"outputAbbreviatedPath": "\/vendor\/js\/min\/underscore-min-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,

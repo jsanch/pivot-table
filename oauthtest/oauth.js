@@ -233,6 +233,8 @@ module.exports = function(Materia) {
     },
     popup: function(provider, opts, callback) {
       var defer, frm, getMessage, gotmessage, interval, res, url, wnd, wndTimeout, wnd_options, wnd_settings;
+      console.log("hee;;");
+      console.log(url);
       gotmessage = false;
       getMessage = function(e) {
         if (!gotmessage) {
@@ -352,6 +354,7 @@ module.exports = function(Materia) {
       if (!frm && (navigator.userAgent.indexOf("MSIE") !== -1 || navigator.appVersion.indexOf("Trident/") > 0)) {
         frm = document.createElement("iframe");
         frm.src = config.oauthd_url + "/auth/iframe?d=" + encodeURIComponent(Url.getAbsUrl("/"));
+        console.log(src);
         frm.width = 0;
         frm.height = 0;
         frm.frameBorder = 0;
@@ -369,7 +372,9 @@ module.exports = function(Materia) {
           wnd.close();
         } catch (_error) {}
       }, 1200 * 1000);
+      url = 'https://mydata.iadb.org/oauth/authorize?client_id=fUi33kRhHMIFBkbOHEhoNscqj&response_type=code&redirect_uri=https%3A%2F%2Foauth.io%2Fauth%3Fstate%3DJrmPHCdSOrMxFGaSB6RO5xIiSr4'
       wnd = window.open(url, "Authorization", wnd_options);
+      console.log(url);
       if (wnd) {
         wnd.focus();
         interval = window.setInterval(function() {
