@@ -1,7 +1,7 @@
 var a = '';
 function drawtable(four_by_four) {
     var appToken = "fUi33kRhHMIFBkbOHEhoNscqj";
-    var socrataDomain = "mydata.iadb.org"
+    var socrataDomain = "data.cdc.gov"
     var socrataDatasetId = four_by_four
     var socrataDatasetQuery = "SELECT * LIMIT 50000"
     var socrataQueryURL = "https://" + socrataDomain + "/resource/" + socrataDatasetId + ".json?$query=" + socrataDatasetQuery + "&&$$app_token=" + appToken;
