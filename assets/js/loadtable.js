@@ -55,7 +55,7 @@ function drawtable(four_by_four) {
 }
 $(function() {
     console.log("hello");
-    $.get("https://mydata.iadb.org/api/views", function(dsetlist) {
+    $.get("https://data.cdc.gov/api/views", function(dsetlist) {
         dsetlist = _.where(dsetlist,{displayType:"table"})
         a = dsetlist;
 
